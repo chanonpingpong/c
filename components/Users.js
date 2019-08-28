@@ -36,10 +36,12 @@ export default ({ items }) => {
           text-transform: uppercase;
         }
       `}</style>
-      <h2 className="header-2"><FormattedMessage id="online" /></h2>
+      <h2 className="header-2">
+        <FormattedMessage id="online" />
+      </h2>
       <ul className="user-list">
         {items.map((i, index) => {
-          const userName = i.display_name || i.id;
+          const userName = i && (i.display_name || i.id);
           return (
             <li key={index} className="user-list__item media">
               <div className="media__img">
@@ -52,9 +54,7 @@ export default ({ items }) => {
                   title={userName}
                 />
               </div>
-              <div className="user-name media__bd">
-                {userName}
-              </div>
+              <div className="user-name media__bd">{userName}</div>
             </li>
           );
         })}
