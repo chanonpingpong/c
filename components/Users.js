@@ -47,7 +47,7 @@ export default ({ items }) => {
               <div className="media__img">
                 <img
                   className="user-image"
-                  src={(i.images && i.images.length && i.images[0].url) || '/static/user-icon.png'}
+                  src={(i && i.images && i.images.length && i.images[0].url) || '/static/user-icon.png'}
                   width="30"
                   height="30"
                   alt={userName}

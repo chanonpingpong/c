@@ -65,7 +65,7 @@ const Header = ({ session, muted, mutePlayback, unmutePlayback, login }) => (
           <img
             className="user-image"
             src={
-              (session.user.images && session.user.images.length && session.user.images[0].url) ||
+              (session.user && session.user.images && session.user.images.length && session.user.images[0].url) ||
               '/static/user-icon.png'
             }
             width="30"

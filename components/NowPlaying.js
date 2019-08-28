@@ -94,7 +94,10 @@ class NowPlaying extends React.PureComponent {
               <img
                 className="user-image"
                 src={
-                  (this.props.user.images && this.props.user.images.length && this.props.user.images[0].url) ||
+                  (this.props.user &&
+                    this.props.user.images &&
+                    this.props.user.images.length &&
+                    this.props.user.images[0].url) ||
                   '/static/user-icon.png'
                 }
                 width="30"
