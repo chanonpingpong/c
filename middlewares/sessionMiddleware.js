@@ -19,7 +19,7 @@ const getCurrentUser = () => (dispatch, getState) =>
     });
 
 const updateToken = () => (dispatch, getState) => {
-  return fetch(`${process.env.HOST}/auth/token`, {
+  return fetch(`/auth/token`, {
     method: 'POST',
     body: JSON.stringify({
       refresh_token: getState().session.refresh_token
