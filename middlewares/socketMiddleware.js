@@ -61,7 +61,7 @@ export function socketMiddleware(store) {
   };
 }
 export default function(store) {
-  socket = io.connect(Config.HOST);
+  socket = io.connect(process.env.HOST);
 
   socket.on('update queue', data => {
     store.dispatch(updateQueue(data));
